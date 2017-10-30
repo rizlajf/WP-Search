@@ -98,7 +98,7 @@ namespace WP_search
                     {
                         if (Regex.Match(item.title.rendered, "amplifiers", RegexOptions.IgnoreCase).Success)
                         {
-                            item.link = "http://dev.markimicrowave.com/amplifiers/amplifiers-products.aspx";
+                            item.link = "http://dev.markimicrowave.com/amplifiers/amplifiers-products.aspx";                            
                         }
                         else if(Regex.Match(item.title.rendered, "baluns", RegexOptions.IgnoreCase).Success)
                         {
@@ -143,7 +143,8 @@ namespace WP_search
                         else if (Regex.Match(item.title.rendered, "accessories", RegexOptions.IgnoreCase).Success)
                         {
                             item.link = "http://dev.markimicrowave.com/accessories/accessories-products.aspx";
-                        }                        
+                        }
+                        item.title.rendered = item.title.rendered.Replace("Category", "");
                     }
                     matchedPagesList.Add(item);
                 }
